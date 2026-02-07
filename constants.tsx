@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ServiceDetail } from './types.ts';
+import { ServiceDetail } from './types';
 
 export const STRAPCO_S_LOGO = (
   <div className="flex items-center gap-5 group">
@@ -43,7 +43,7 @@ export const STRAPCO_FULL_LOGO = (
     <div className="mt-4 flex items-center gap-4">
       <div className="h-px w-6 bg-brand"></div>
       <span className="text-[9px] font-black tracking-[0.5em] text-slate-500 uppercase">
-        Strategic Infrastructure
+        Strategic Delivery
       </span>
     </div>
   </div>
@@ -51,27 +51,27 @@ export const STRAPCO_FULL_LOGO = (
 
 export const SERVICES: ServiceDetail[] = [
   {
-    id: 'product-ux',
+    id: 'product-intelligence',
     title: 'Product Intelligence',
-    category: 'Design Engineering',
-    description: 'Advanced user discovery and prototyping for mission-critical estates. We define the logic before we build the experience.',
-    features: ['GDS Discovery & Alpha', 'Behavioral Research', 'Rapid Logic Prototyping', 'Accessibility Audit'],
+    category: 'Discovery',
+    description: 'Advanced behavioral research and prototyping for the UK public sector. We define high-integrity user logic before any code is written.',
+    features: ['GDS Discovery & Alpha', 'Prototyping', 'User Research', 'Logic Audits'],
     benefits: ['Risk Mitigation', 'High Adoption', 'Political Capital']
   },
   {
-    id: 'delivery',
+    id: 'implementation',
     title: 'Strategic Implementation',
-    category: 'Systems Modernization',
-    description: 'Elite delivery squads specialized in legacy extraction and cloud-native architecture for high-compliance environments.',
-    features: ['Agile Transformation', 'Legacy Decoupling', 'Cloud Security Ops', 'Engineering Leadership'],
-    benefits: ['Technical Debt Reduction', 'Operational Resilience', 'Velocity']
+    category: 'Engineering',
+    description: 'Elite technical delivery squads specializing in legacy modernization and cloud infrastructure for regulated estates.',
+    features: ['Legacy Decoupling', 'Cloud-Native Architecture', 'Agile Delivery', 'Tech Assessment'],
+    benefits: ['Debt Reduction', 'Resilience', 'Velocity']
   },
   {
     id: 'advisory',
     title: 'Enterprise Advisory',
-    category: 'Governance & Logic',
-    description: 'High-level consulting for CxOs. We provide the clarity needed to navigate complex regulatory and technical landscapes.',
-    features: ['Operating Model Design', 'Commercial Assurance', 'G-Cloud Procurement', 'Strategy Assessment'],
-    benefits: ['Executive Alignment', 'Regulatory Confidence', 'Portfolio Efficiency']
+    category: 'Strategy',
+    description: 'High-level consultancy for board-level stakeholders. Navigating the intersection of policy, legacy tech, and future goals.',
+    features: ['Operating Models', 'G-Cloud Procurement', 'Strategy Assessment', 'Team Augmentation'],
+    benefits: ['Executive Alignment', 'Regulatory Confidence', 'Efficiency']
   }
 ];
