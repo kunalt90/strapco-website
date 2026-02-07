@@ -1,5 +1,0 @@
-{
-  "name": "Strapco | Business Transformation Consulting",
-  "description": "High-integrity strategic advisory and systems modernization for the UK's regulated industries and public sector.",
-  "requestFramePermissions": []
-}
