@@ -4,11 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        navy: { 950: "#02040a", 900: "#0a0c12", 800: "#11141d" },
-        brand: "#0066FF",
-        slate: { 400: "#94A3B8", 500: "#64748B" }
+        navy: {
+          950: "#02040a",
+          900: "#0a0c12",
+          800: "#11141d"
+        },
+        brand: "#0066FF"
       },
-      fontFamily: { sans: ["Inter", "system-ui", "sans-serif"] }
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"]
+      }
     }
   },
   plugins: []
