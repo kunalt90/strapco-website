@@ -10,7 +10,7 @@ import {
   Zap,
   Command
 } from 'lucide-react';
-import { STRAPCO_S_LOGO, STRAPCO_FULL_LOGO, SERVICES } from './constants.tsx';
+import { STRAPCO_S_LOGO, STRAPCO_FULL_LOGO, SERVICES } from './constants';
 
 type Page = 'home' | 'capabilities' | 'frameworks' | 'strategy' | 'contact';
 
@@ -30,7 +30,7 @@ const App: React.FC = () => {
   const Navigation = () => (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${scrolled ? 'glass-nav py-4' : 'bg-transparent py-8'}`}>
       <div className="max-w-[1440px] mx-auto px-6 lg:px-16 flex justify-between items-center">
-        <button onClick={() => setCurrentPage('home')} className="flex items-center transition-transform hover:scale-105">
+        <button onClick={() => setCurrentPage('home')} className="flex items-center transition-transform hover:scale-105 active:scale-95">
           {STRAPCO_S_LOGO}
         </button>
         
@@ -55,7 +55,7 @@ const App: React.FC = () => {
           </button>
         </div>
 
-        <button className="lg:hidden text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <button className="lg:hidden text-white p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
@@ -77,7 +77,7 @@ const App: React.FC = () => {
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16 w-full">
           <div className="max-w-6xl">
             <div className="flex items-center gap-4 text-brand mb-12 animate-in slide-in-from-left duration-700">
-              <span className="text-[10px] font-black uppercase tracking-[0.6em] border-b border-brand pb-1">Precision Strategy</span>
+              <span className="text-[10px] font-black uppercase tracking-[0.6em] border-b border-brand pb-1">Strategic Logic</span>
               <div className="h-px flex-grow bg-white/5 max-w-[100px]"></div>
             </div>
             
@@ -89,13 +89,13 @@ const App: React.FC = () => {
 
             <div className="grid lg:grid-cols-2 gap-20 items-end">
               <p className="text-xl md:text-2xl text-slate-400 leading-relaxed font-medium text-balance">
-                Strapco is a strategic consultancy delivering complex systems modernization for regulated industries. We bridge the gap between abstract strategy and operational reality.
+                Strapco is a boutique consultancy engineering complex systems modernization for regulated industries. We bridge the gap between abstract strategy and operational reality.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6">
                 <button 
                   onClick={() => setCurrentPage('capabilities')}
-                  className="px-12 py-6 bg-brand text-white font-bold uppercase tracking-widest text-[10px] hover:bg-white hover:text-navy-950 transition-all flex items-center justify-center gap-6 group"
+                  className="px-12 py-6 bg-brand text-white font-bold uppercase tracking-widest text-[10px] hover:bg-white hover:text-navy-950 transition-all flex items-center justify-center gap-6 group shadow-[0_0_30px_rgba(0,102,255,0.2)]"
                 >
                   Explore Capabilities <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
                 </button>
@@ -104,7 +104,7 @@ const App: React.FC = () => {
                     <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">Status</span>
                     <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                      <span className="text-[10px] font-bold text-white uppercase tracking-widest">Active Partner</span>
+                      <span className="text-[10px] font-bold text-white uppercase tracking-widest">Available Q2</span>
                     </div>
                   </div>
                 </div>
@@ -151,34 +151,53 @@ const App: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-navy-950">
+    <div className="min-h-screen bg-navy-950 font-sans">
       <Navigation />
       <main>
         {currentPage === 'home' ? <HomePage /> : (
-          <div className="pt-64 px-16 min-h-[80vh] flex flex-col items-center justify-center text-center">
-            <h1 className="text-8xl font-black text-white mb-10 tracking-tighter uppercase">{currentPage}</h1>
-            <p className="text-slate-500 text-xl max-w-xl mx-auto font-medium">Detailed specifications for our {currentPage} framework are currently classified.</p>
-            <button onClick={() => setCurrentPage('home')} className="mt-20 px-10 py-5 border border-white/10 text-[10px] font-black uppercase tracking-[0.4em] hover:bg-brand hover:border-brand transition-all">Back to Overview</button>
+          <div className="pt-64 px-6 lg:px-16 min-h-[80vh] flex flex-col items-center justify-center text-center zest-grid animate-in fade-in slide-in-from-bottom duration-700">
+             <div className="flex items-center gap-4 text-brand mb-8">
+              <span className="text-[10px] font-black uppercase tracking-[0.6em]">Section // {currentPage}</span>
+            </div>
+            <h1 className="text-6xl lg:text-8xl font-black text-white mb-10 tracking-tighter uppercase">{currentPage}</h1>
+            <p className="text-slate-500 text-xl max-w-xl mx-auto font-medium leading-relaxed">Detailed specifications and operational frameworks for our {currentPage} methodologies are currently classified for partner review only.</p>
+            <button 
+              onClick={() => setCurrentPage('home')} 
+              className="mt-20 px-10 py-5 border border-white/10 text-[10px] font-black uppercase tracking-[0.4em] hover:bg-brand hover:border-brand transition-all active:scale-95"
+            >
+              Back to Overview
+            </button>
           </div>
         )}
       </main>
+      
       <footer className="bg-navy-950 py-40 border-t border-white/5">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
           <div className="grid lg:grid-cols-4 gap-20">
-            <div className="lg:col-span-2">{STRAPCO_FULL_LOGO}</div>
+            <div className="lg:col-span-2">
+              {STRAPCO_FULL_LOGO}
+              <p className="mt-12 max-w-md text-sm font-medium text-slate-500 leading-relaxed">
+                Expert implementation of digital architecture for the UK's regulated industries. From GDS Discovery to full-scale technical delivery.
+              </p>
+            </div>
             <div>
               <h4 className="text-[10px] font-black text-brand uppercase tracking-[0.4em] mb-10">Intelligence</h4>
               <ul className="space-y-6 text-[10px] font-bold text-slate-400 uppercase tracking-[0.25em]">
                 <li><button onClick={() => setCurrentPage('capabilities')} className="hover:text-white transition-colors">Capabilities</button></li>
-                <li><button onClick={() => setCurrentPage('frameworks')} className="hover:text-white transition-colors">Methods</button></li>
+                <li><button onClick={() => setCurrentPage('frameworks')} className="hover:text-white transition-colors">Frameworks</button></li>
+                <li><a href="#" className="hover:text-white transition-colors">Insights</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-[10px] font-black text-brand uppercase tracking-[0.4em] mb-10">Connect</h4>
               <ul className="space-y-6 text-[10px] font-bold text-slate-400 uppercase tracking-[0.25em]">
-                <li><button onClick={() => setCurrentPage('contact')} className="hover:text-white transition-colors">Inquiry</button></li>
+                <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
+                <li><button onClick={() => setCurrentPage('contact')} className="hover:text-white transition-colors">Contact</button></li>
               </ul>
             </div>
+          </div>
+          <div className="mt-40 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-[9px] font-bold text-slate-700 uppercase tracking-[0.4em]">© 2025 Strapco Strategic Delivery. ISO 27001 Accredited.</p>
           </div>
         </div>
       </footer>
