@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ServiceDetail } from './types';
+import { ServiceDetail } from './types.ts';
 
 export const STRAPCO_S_LOGO = (
   <div className="flex items-center gap-5 group">
