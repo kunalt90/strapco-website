@@ -70,7 +70,7 @@
     "react": "https://esm.sh/react@19.0.0",
     "react-dom": "https://esm.sh/react-dom@19.0.0",
     "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
-    "lucide-react": "https://esm.sh/lucide-react@0.460.0?external=react",
+    "lucide-react": "https://esm.sh/lucide-react@0.460.0?external=react,react-dom",
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
     "react/": "https://esm.sh/react@^19.2.4/"
   }
@@ -79,9 +79,9 @@
   </head>
   <body>
     <div id="root">
-      <div style="height: 100vh; display: flex; align-items: center; justify-content: center; background: #02040a; flex-direction: column; gap: 20px;">
-        <div class="loading-text" style="color: #0066FF; font-family: sans-serif; font-weight: 900; letter-spacing: 0.5em; text-transform: uppercase; font-size: 10px;">Initializing Environment</div>
-        <div style="width: 20px; h-px; background: #0066FF; height: 1px;"></div>
+      <div style="height: 100vh; display: flex; align-items: center; justify-content: center; background: #02040a; flex-direction: column; gap: 24px;">
+        <div class="loading-text" style="color: #0066FF; font-family: 'Inter', sans-serif; font-weight: 900; letter-spacing: 0.6em; text-transform: uppercase; font-size: 11px;">SYSTEM_INITIALIZING</div>
+        <div style="width: 40px; height: 1px; background: rgba(0, 102, 255, 0.3);"></div>
       </div>
     </div>
     <script type="module" src="./index.tsx"></script>
