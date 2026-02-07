@@ -10,7 +10,7 @@ import {
   Zap,
   Command
 } from 'lucide-react';
-import { STRAPCO_S_LOGO, STRAPCO_FULL_LOGO, SERVICES } from './constants';
+import { STRAPCO_S_LOGO, STRAPCO_FULL_LOGO, SERVICES } from './constants.tsx';
 
 type Page = 'home' | 'capabilities' | 'frameworks' | 'strategy' | 'contact';
 
