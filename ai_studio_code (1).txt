@@ -1,8 +1,0 @@
-export interface ServiceDetail {
-  id: string;
-  title: string;
-  category: string;
-  description: string;
-  features: string[];
-  benefits: string[];
-}
