@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Global font: force Inter everywhere to prevent mixed fallbacks */
+html,
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
 :root {
   font-family: Inter, system-ui, sans-serif;
 }
