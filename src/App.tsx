@@ -113,20 +113,20 @@ const App: React.FC = () => {
     const featured = CASE_STUDIES.slice(0, 3);
 
     return (
-      <section className="py-32 bg-slate-850 border-t border-white/5">
+      <section className="py-28 bg-slate-850 border-t border-white/5">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
-          <div className="mb-14 border border-white/10 overflow-hidden">
+          <div className="mb-12 border border-white/10 overflow-hidden bg-white/5">
             <img
               src="/images/case-studies.jpg"
               alt="Case studies"
-              className="w-full h-[220px] md:h-[280px] object-cover opacity-85"
+              className="w-full h-[200px] md:h-[260px] object-cover opacity-90"
               loading="lazy"
             />
           </div>
 
-          <div className="flex flex-col lg:flex-row justify-between items-baseline mb-16 gap-10">
+          <div className="flex flex-col lg:flex-row justify-between items-baseline mb-14 gap-10">
             <div>
-              <div className="flex items-center gap-4 text-brand mb-6">
+              <div className="flex items-center gap-4 text-brand mb-5">
                 <span className="text-[10px] font-black uppercase tracking-[0.6em] border-b border-brand pb-1">
                   Delivery Evidence
                 </span>
@@ -137,7 +137,7 @@ const App: React.FC = () => {
               </h2>
             </div>
 
-            <div className="text-slate-400 text-sm font-medium max-w-xl">
+            <div className="text-slate-200/80 text-sm font-medium max-w-xl leading-relaxed">
               Clients are intentionally anonymised. These examples focus on delivery approach, technology and
               measurable outcomes in regulated environments.
             </div>
@@ -150,12 +150,12 @@ const App: React.FC = () => {
                   <div className="text-brand text-[10px] font-black uppercase tracking-[0.5em]">
                     {cs.sector}
                   </div>
-                  <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
+                  <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-200/70">
                     {cs.classification}
                   </div>
                 </div>
 
-                <p className="mt-6 text-slate-300 text-sm font-medium leading-relaxed flex-grow">
+                <p className="mt-6 text-slate-100/85 text-sm font-medium leading-relaxed flex-grow">
                   {cs.summary}
                 </p>
 
@@ -167,7 +167,7 @@ const App: React.FC = () => {
                     {cs.outcomes.slice(0, 3).map((o, i) => (
                       <div
                         key={i}
-                        className="flex items-start gap-3 text-[12px] font-medium text-slate-300 leading-relaxed"
+                        className="flex items-start gap-3 text-[12px] font-medium text-slate-100/80 leading-relaxed"
                       >
                         <div className="mt-2 w-1 h-1 bg-brand flex-shrink-0"></div>
                         <span>{o}</span>
@@ -179,7 +179,7 @@ const App: React.FC = () => {
                 <div className="mt-8">
                   <button
                     onClick={() => setCurrentPage("case-studies")}
-                    className="text-[10px] font-black uppercase tracking-[0.35em] text-white/70 hover:text-white transition-colors inline-flex items-center gap-3"
+                    className="text-[10px] font-black uppercase tracking-[0.35em] text-white/75 hover:text-white transition-colors inline-flex items-center gap-3"
                   >
                     View full case studies <ChevronRight size={14} />
                   </button>
@@ -188,8 +188,8 @@ const App: React.FC = () => {
             ))}
           </div>
 
-          <div className="mt-16 flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
-            <p className="text-slate-300/80 text-sm font-medium max-w-2xl">
+          <div className="mt-14 flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
+            <p className="text-slate-100/70 text-sm font-medium max-w-2xl leading-relaxed">
               Want case studies tailored to your domain? Strapco can share a short engagement outline and
               relevant delivery artefacts.
             </p>
@@ -215,78 +215,82 @@ const App: React.FC = () => {
 
   const HomePage = () => (
     <div>
-      <section className="relative min-h-screen flex flex-col justify-center pt-32 zest-grid bg-navy-950">
-        <div className="max-w-[1440px] mx-auto px-6 lg:px-16 w-full">
-          <div className="max-w-6xl">
-            <div className="flex items-center gap-4 text-brand mb-12">
-              <span className="text-[10px] font-black uppercase tracking-[0.6em] border-b border-brand pb-1">
-                Trusted Delivery for Regulated Environments
-              </span>
-              <div className="h-px flex-grow bg-white/5 max-w-[100px]"></div>
-            </div>
+      {/* HERO: lighter navy + controlled layout */}
+      <section className="relative pt-32 pb-20 zest-grid bg-navy-950">
+        {/* subtle lightening overlay */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/0 via-white/0 to-white/5"></div>
 
-            <div className="grid lg:grid-cols-2 gap-14 items-center">
-              <div>
-                <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-[0.9] tracking-[-0.03em] text-white mb-10 text-balance">
-                  ASSURED DELIVERY
-                  <br />
-                  <span className="text-slate-700">IN REGULATED</span>
-                  <br />
-                  <span className="text-brand">ENVIRONMENTS.</span>
-                </h1>
+        <div className="relative max-w-[1440px] mx-auto px-6 lg:px-16">
+          <div className="flex items-center gap-4 text-brand mb-10">
+            <span className="text-[10px] font-black uppercase tracking-[0.6em] border-b border-brand pb-1">
+              Trusted delivery for regulated environments
+            </span>
+            <div className="h-px flex-grow bg-white/5 max-w-[140px]"></div>
+          </div>
 
-                <p className="text-lg sm:text-xl text-slate-400 leading-relaxed font-medium text-balance">
-                  Strapco provides senior delivery, data and technology consulting to highly regulated
-                  organisations across the UK public sector.
-                  <br />
-                  <br />
-                  We specialise in translating policy, legal and investigative requirements into operational
-                  systems that are secure, compliant and deliverable at scale.
-                </p>
+          {/* IMPORTANT: minmax columns so nothing overlaps */}
+          <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] gap-12 items-center">
+            {/* LEFT */}
+            <div className="min-w-0">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[0.95] tracking-[-0.03em] text-white">
+                Assured delivery
+                <br />
+                <span className="text-slate-300">for</span>{" "}
+                <span className="text-brand">regulated</span>
+                <br />
+                environments.
+              </h1>
 
-                <div className="mt-10 flex flex-col sm:flex-row gap-6">
-                  <button
-                    onClick={() => setCurrentPage("case-studies")}
-                    className="px-10 py-5 bg-brand text-white font-bold uppercase tracking-widest text-[10px] hover:bg-white hover:text-navy-950 transition-all flex items-center justify-center gap-6 group shadow-[0_0_30px_rgba(37,99,235,0.22)]"
-                  >
-                    View Case Studies
-                    <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
-                  </button>
+              <p className="mt-8 text-base sm:text-lg text-slate-200/80 leading-relaxed font-medium max-w-xl">
+                Strapco provides senior delivery, data and technology consulting to highly regulated
+                organisations across the UK public sector. We translate policy, legal and investigative
+                requirements into operational systems that are secure, compliant and deliverable at scale.
+              </p>
 
-                  <div className="flex items-center gap-10 border-l border-white/10 pl-10">
-                    <div className="flex flex-col">
-                      <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-1">
-                        Status
+              <div className="mt-10 flex flex-col sm:flex-row gap-6 sm:items-center">
+                <button
+                  onClick={() => setCurrentPage("case-studies")}
+                  className="px-10 py-5 bg-brand text-white font-bold uppercase tracking-widest text-[10px] hover:bg-white hover:text-navy-950 transition-all inline-flex items-center justify-center gap-6 shadow-[0_0_30px_rgba(37,99,235,0.22)]"
+                >
+                  View case studies <ArrowRight size={16} />
+                </button>
+
+                <div className="flex items-center gap-10 border-l border-white/10 pl-10">
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">
+                      Status
+                    </span>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                      <span className="text-[10px] font-bold text-white uppercase tracking-widest">
+                        Available Q2
                       </span>
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                        <span className="text-[10px] font-bold text-white uppercase tracking-widest">
-                          Available Q2
-                        </span>
-                      </div>
                     </div>
                   </div>
                 </div>
-
-                <div className="mt-12 flex flex-wrap gap-3">
-                  {["Discovery → Live", "Framework-ready", "Risk-managed delivery", "Audit-friendly requirements"].map(
-                    (t) => (
-                      <span
-                        key={t}
-                        className="px-4 py-2 border border-white/10 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400"
-                      >
-                        {t}
-                      </span>
-                    )
-                  )}
-                </div>
               </div>
 
-              <div className="border border-white/10 bg-white/5 overflow-hidden">
+              <div className="mt-10 flex flex-wrap gap-3">
+                {["Discovery → Live", "Framework-ready", "Risk-managed delivery", "Audit-friendly requirements"].map(
+                  (t) => (
+                    <span
+                      key={t}
+                      className="px-4 py-2 border border-white/10 bg-white/0 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-200/70"
+                    >
+                      {t}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+
+            {/* RIGHT: image contained so it cannot overlap */}
+            <div className="min-w-0 lg:justify-self-end w-full">
+              <div className="border border-white/10 bg-white/5 overflow-hidden w-full max-w-[520px]">
                 <img
                   src="/images/hero.jpg"
                   alt="Modern delivery in regulated environments"
-                  className="w-full h-[420px] md:h-[520px] object-cover opacity-90"
+                  className="w-full h-[280px] sm:h-[340px] lg:h-[360px] object-cover opacity-95"
                   loading="eager"
                 />
               </div>
@@ -295,14 +299,15 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      <section className="py-32 bg-navy-900 border-y border-white/5">
+      {/* CAPABILITIES: slightly lighter */}
+      <section className="py-28 bg-navy-900 border-y border-white/5">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
-          <div className="flex flex-col lg:flex-row justify-between items-baseline mb-20 gap-10">
-            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-[-0.03em]">
-              Core Delivery Capabilities
+          <div className="flex flex-col lg:flex-row justify-between items-baseline mb-16 gap-10">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-[-0.03em]">
+              Core delivery capabilities
             </h2>
-            <p className="text-slate-400 text-sm font-bold uppercase tracking-widest">
-              Framework-Aligned Services
+            <p className="text-slate-200/70 text-sm font-bold uppercase tracking-widest">
+              Framework-aligned services
             </p>
           </div>
 
@@ -316,30 +321,30 @@ const App: React.FC = () => {
                   <img
                     src={`/images/capability-${i + 1}.jpg`}
                     alt={s.title}
-                    className="w-full h-[160px] object-cover opacity-85 group-hover:opacity-100 transition-opacity"
+                    className="w-full h-[150px] object-cover opacity-85 group-hover:opacity-100 transition-opacity"
                     loading="lazy"
                   />
                 </div>
 
-                <span className="text-brand text-[10px] font-black tracking-[0.5em] uppercase mb-10 opacity-40 group-hover:opacity-100 transition-opacity">
+                <span className="text-brand text-[10px] font-black tracking-[0.5em] uppercase mb-10 opacity-50 group-hover:opacity-100 transition-opacity">
                   0{i + 1}
                 </span>
 
                 <div className="mb-10">
                   {i === 0 ? (
-                    <Command className="text-white" size={28} />
+                    <Command className="text-white" size={26} />
                   ) : i === 1 ? (
-                    <Layers className="text-white" size={28} />
+                    <Layers className="text-white" size={26} />
                   ) : (
-                    <ShieldCheck className="text-white" size={28} />
+                    <ShieldCheck className="text-white" size={26} />
                   )}
                 </div>
 
-                <h3 className="text-3xl lg:text-4xl font-black text-white mb-6 tracking-[-0.03em] group-hover:text-brand transition-colors">
+                <h3 className="text-2xl lg:text-3xl font-black text-white mb-5 tracking-[-0.03em] group-hover:text-brand transition-colors">
                   {s.title}
                 </h3>
 
-                <p className="text-slate-300 text-base lg:text-lg mb-10 font-medium leading-relaxed flex-grow">
+                <p className="text-slate-100/80 text-base mb-10 font-medium leading-relaxed flex-grow">
                   {s.description}
                 </p>
 
@@ -347,7 +352,7 @@ const App: React.FC = () => {
                   {s.features.slice(0, 3).map((f, fi) => (
                     <div
                       key={fi}
-                      className="flex items-center gap-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest"
+                      className="flex items-center gap-3 text-[10px] font-bold text-slate-200/70 uppercase tracking-widest"
                     >
                       <div className="w-1 h-1 bg-brand"></div> {f}
                     </div>
@@ -356,18 +361,18 @@ const App: React.FC = () => {
 
                 <button
                   onClick={() => setCurrentPage("capabilities")}
-                  className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/60 group-hover:text-white transition-all"
+                  className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/70 group-hover:text-white transition-all"
                 >
-                  Full Details <ChevronRight size={14} />
+                  Full details <ChevronRight size={14} />
                 </button>
               </div>
             ))}
           </div>
 
-          <div className="mt-14 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
-            <p className="text-slate-400 text-sm font-medium max-w-2xl">
-              Work is delivered with traceability (policy → requirements → acceptance criteria), clear
-              governance and operational readiness—so delivery stands up to scrutiny.
+          <div className="mt-12 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
+            <p className="text-slate-100/70 text-sm font-medium max-w-2xl leading-relaxed">
+              Delivery is built with traceability (policy → requirements → acceptance criteria), clear governance
+              and operational readiness—so it stands up to scrutiny.
             </p>
             <button
               onClick={() => setCurrentPage("frameworks")}
@@ -393,7 +398,9 @@ const App: React.FC = () => {
         <div className="flex items-center gap-4 text-brand mb-8">
           <span className="text-[10px] font-black uppercase tracking-[0.6em]">{kicker}</span>
         </div>
-        <h1 className="text-5xl lg:text-7xl font-black text-white mb-10 tracking-[-0.03em]">{title}</h1>
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-10 tracking-[-0.03em]">
+          {title}
+        </h1>
         {children}
       </div>
     </div>
@@ -401,13 +408,13 @@ const App: React.FC = () => {
 
   const CapabilitiesPage = () => (
     <PageShell title="Delivery that holds up under scrutiny." kicker="Capabilities">
-      <p className="text-slate-300 text-lg max-w-3xl font-medium leading-relaxed">
-        Strapco supports complex programmes where policy, legal constraints, security requirements and
-        operational realities must be reflected in the delivery artefacts—not added later.
+      <p className="text-slate-100/80 text-lg max-w-3xl font-medium leading-relaxed">
+        Strapco supports complex programmes where policy, legal constraints, security requirements and operational
+        realities must be reflected in delivery artefacts—not added later.
         <br />
         <br />
-        Typical outputs include: structured epics and user stories, acceptance criteria, operational rules,
-        service constraints, governance controls, and implementation-ready delivery plans.
+        Typical outputs include: structured epics and user stories, acceptance criteria, operational rules, service
+        constraints, governance controls, and implementation-ready delivery plans.
       </p>
 
       <div className="mt-16">
@@ -423,9 +430,9 @@ const App: React.FC = () => {
 
   const CaseStudiesPage = () => (
     <PageShell title="Anonymised delivery outcomes." kicker="Case Studies">
-      <p className="text-slate-300 text-lg max-w-3xl font-medium leading-relaxed">
-        Examples of work delivered across highly regulated environments. Clients are intentionally anonymised;
-        the focus is on delivery approach, technology and outcomes.
+      <p className="text-slate-100/80 text-lg max-w-3xl font-medium leading-relaxed">
+        Examples of work delivered across highly regulated environments. Clients are intentionally anonymised; the focus
+        is on delivery approach, technology and outcomes.
       </p>
 
       <div className="mt-14 grid lg:grid-cols-2 gap-6">
@@ -433,23 +440,18 @@ const App: React.FC = () => {
           <div key={cs.id} className="border border-white/10 bg-white/5 p-10">
             <div className="flex flex-wrap gap-3 items-center justify-between">
               <div className="text-brand text-[10px] font-black uppercase tracking-[0.5em]">{cs.sector}</div>
-              <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
+              <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-100/70">
                 {cs.classification}
               </div>
             </div>
 
-            <p className="mt-6 text-slate-300 text-sm font-medium leading-relaxed">{cs.summary}</p>
+            <p className="mt-6 text-slate-100/80 text-sm font-medium leading-relaxed">{cs.summary}</p>
 
             <div className="mt-8">
-              <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/80 mb-4">
-                Outcomes
-              </div>
+              <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/80 mb-4">Outcomes</div>
               <div className="space-y-3">
                 {cs.outcomes.map((o, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-3 text-[12px] font-medium text-slate-300 leading-relaxed"
-                  >
+                  <div key={i} className="flex items-start gap-3 text-[12px] font-medium text-slate-100/75 leading-relaxed">
                     <div className="mt-2 w-1 h-1 bg-brand flex-shrink-0"></div>
                     <span>{o}</span>
                   </div>
@@ -459,24 +461,20 @@ const App: React.FC = () => {
 
             <div className="mt-8 grid sm:grid-cols-2 gap-6">
               <div>
-                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/80 mb-4">
-                  Technology
-                </div>
+                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/80 mb-4">Technology</div>
                 <div className="space-y-2">
                   {cs.technologies.map((t, i) => (
-                    <div key={i} className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
+                    <div key={i} className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-100/70">
                       {t}
                     </div>
                   ))}
                 </div>
               </div>
               <div>
-                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/80 mb-4">
-                  Delivery
-                </div>
+                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/80 mb-4">Delivery</div>
                 <div className="space-y-2">
                   {cs.delivery.map((d, i) => (
-                    <div key={i} className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
+                    <div key={i} className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-100/70">
                       {d}
                     </div>
                   ))}
@@ -500,10 +498,9 @@ const App: React.FC = () => {
 
   const FrameworksPage = () => (
     <PageShell title="Framework-ready engagement." kicker="Frameworks">
-      <p className="text-slate-300 text-lg max-w-3xl font-medium leading-relaxed">
-        Strapco is structured for public sector procurement and delivery expectations. Engagements are scoped
-        with clear outcomes, deliverables, governance and quality gates—designed to support transparent
-        decision-making and auditability.
+      <p className="text-slate-100/80 text-lg max-w-3xl font-medium leading-relaxed">
+        Strapco is structured for public sector procurement and delivery expectations. Engagements are scoped with clear
+        outcomes, deliverables, governance and quality gates—designed to support transparent decision-making and auditability.
       </p>
 
       <div className="mt-16">
@@ -519,10 +516,9 @@ const App: React.FC = () => {
 
   const StrategyPage = () => (
     <PageShell title="Options, trade-offs and delivery reality." kicker="Strategy">
-      <p className="text-slate-300 text-lg max-w-3xl font-medium leading-relaxed">
-        Strategy is only useful when it is deliverable. Strapco supports senior stakeholders with options
-        analysis, delivery strategies, dependency mapping and risk controls—grounded in modern delivery
-        practice and regulated constraints.
+      <p className="text-slate-100/80 text-lg max-w-3xl font-medium leading-relaxed">
+        Strategy is only useful when it is deliverable. Strapco supports senior stakeholders with options analysis, delivery strategies,
+        dependency mapping and risk controls—grounded in modern delivery practice and regulated constraints.
       </p>
 
       <div className="mt-16">
@@ -538,9 +534,9 @@ const App: React.FC = () => {
 
   const ContactPage = () => (
     <PageShell title="Start with scope, outcomes and constraints." kicker="Inquiry">
-      <p className="text-slate-300 text-lg font-medium leading-relaxed max-w-3xl">
-        Share the problem space, constraints (security, compliance, policy), stakeholders involved, and any
-        delivery timelines. Strapco can respond with a short engagement outline and proposed deliverables.
+      <p className="text-slate-100/80 text-lg font-medium leading-relaxed max-w-3xl">
+        Share the problem space, constraints (security, compliance, policy), stakeholders involved, and any delivery timelines.
+        Strapco can respond with a short engagement outline and proposed deliverables.
       </p>
 
       <div className="mt-16">
@@ -548,7 +544,7 @@ const App: React.FC = () => {
           onClick={() => setCurrentPage("home")}
           className="px-10 py-5 border border-white/10 text-[10px] font-black uppercase tracking-[0.4em] hover:bg-brand hover:border-brand transition-all active:scale-95"
         >
-          Back to Overview
+          Back to overview
         </button>
       </div>
     </PageShell>
@@ -578,21 +574,21 @@ const App: React.FC = () => {
       <Navigation />
       <main>{renderPage()}</main>
 
-      <footer className="bg-slate-800 py-28 border-t border-white/10">
+      <footer className="bg-slate-800 py-24 border-t border-white/10">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
           <div className="grid lg:grid-cols-4 gap-16">
             <div className="lg:col-span-2">
               {STRAPCO_FULL_LOGO}
-              <p className="mt-10 max-w-md text-sm font-medium text-slate-400 leading-relaxed">
+              <p className="mt-10 max-w-md text-sm font-medium text-slate-100/70 leading-relaxed">
                 Senior delivery and technology consulting for the UK public sector and regulated environments.
-                From early discovery through to live service, Strapco supports organisations delivering
-                high-risk, high-impact systems with confidence.
+                From early discovery through to live service, Strapco supports organisations delivering high-risk,
+                high-impact systems with confidence.
               </p>
             </div>
 
             <div>
               <h4 className="text-[10px] font-black text-brand uppercase tracking-[0.4em] mb-10">Navigate</h4>
-              <ul className="space-y-6 text-[10px] font-bold text-slate-400 uppercase tracking-[0.25em]">
+              <ul className="space-y-6 text-[10px] font-bold text-slate-100/70 uppercase tracking-[0.25em]">
                 {navItems.map((item) => (
                   <li key={item.id}>
                     <button onClick={() => setCurrentPage(item.id)} className="hover:text-white transition-colors">
@@ -605,7 +601,7 @@ const App: React.FC = () => {
 
             <div>
               <h4 className="text-[10px] font-black text-brand uppercase tracking-[0.4em] mb-10">Connect</h4>
-              <ul className="space-y-6 text-[10px] font-bold text-slate-400 uppercase tracking-[0.25em]">
+              <ul className="space-y-6 text-[10px] font-bold text-slate-100/70 uppercase tracking-[0.25em]">
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
                     LinkedIn
@@ -620,8 +616,8 @@ const App: React.FC = () => {
             </div>
           </div>
 
-          <div className="mt-28 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-            <p className="text-[9px] font-bold text-slate-500 uppercase tracking-[0.4em]">
+          <div className="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-[9px] font-bold text-slate-100/50 uppercase tracking-[0.4em]">
               © 2026 Strapco Strategic Delivery. Delivery assurance for regulated environments.
             </p>
           </div>
