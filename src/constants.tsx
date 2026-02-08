@@ -1,53 +1,53 @@
-import React from 'react';
-import { ServiceDetail } from './types.ts';
+import React from "react";
+import type { ServiceDetail, CaseStudy } from "./types";
 
 export const STRAPCO_S_LOGO = (
-  <div className="flex flex-col group">
-    <div className="flex items-center gap-4">
-      <div className="relative flex items-center justify-center h-10 w-10 border border-slate-200 rounded-lg overflow-hidden bg-white group-hover:border-brand/40 group-hover:bg-slate-50 transition-all duration-500 shadow-sm">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-6 h-6 transform transition-transform group-hover:scale-110 duration-500">
-          <path 
-            d="M27 15C27 13.3431 25.6569 12 24 12H16C14.3431 12 13 13.3431 13 15V17C13 18.6569 14.3431 20 16 20H24C25.6569 20 27 21.3431 27 23V25C27 26.6569 25.6569 28 24 28H16C14.3431 28 13 26.6569 13 25" 
-            stroke="currentColor" 
-            className="text-slate-900 group-hover:text-brand transition-colors"
-            strokeWidth="3.5" 
-            strokeLinecap="round"
-          />
-          <rect x="24.5" y="25.5" width="4" height="4" fill="#0066FF" rx="1" />
-        </svg>
-      </div>
-      <span className="text-xl font-bold tracking-tight text-slate-900 transition-all duration-500">
-        Strapco<span className="text-brand">.</span>
-      </span>
+  <div className="flex items-center gap-5 group">
+    <div className="relative flex items-center justify-center h-10 w-10 border border-white/10 rounded-sm overflow-hidden bg-navy-900 group-hover:border-brand/50 transition-colors">
+      <svg
+        viewBox="0 0 40 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-6 h-6 transform transition-transform group-hover:scale-110 duration-500"
+      >
+        <path
+          d="M27 15C27 13.3431 25.6569 12 24 12H16C14.3431 12 13 13.3431 13 15V17C13 18.6569 14.3431 20 16 20H24C25.6569 20 27 21.3431 27 23V25C27 26.6569 25.6569 28 24 28H16C14.3431 28 13 26.6569 13 25"
+          stroke="currentColor"
+          className="text-white group-hover:text-brand transition-colors"
+          strokeWidth="3"
+          strokeLinecap="square"
+        />
+        <rect x="25" y="26" width="4" height="4" fill="#0066FF" />
+      </svg>
     </div>
-    <span className="mt-1 text-[9px] font-semibold tracking-wider text-slate-400 uppercase font-mono">
-      Business Transformation Consulting
+    <span className="text-xl font-black tracking-[-0.05em] text-white uppercase group-hover:text-brand transition-colors">
+      Strapco<span className="text-brand">.</span>
     </span>
   </div>
 );
 
 export const STRAPCO_FULL_LOGO = (
   <div className="flex flex-col">
-    <div className="flex items-center gap-5">
-      <div className="relative h-14 w-14 border border-slate-100 bg-white flex items-center justify-center rounded-xl shadow-sm">
-        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-9 h-9">
-           <path 
-            d="M27 15C27 13.3431 25.6569 12 24 12H16C14.3431 12 13 13.3431 13 15V17C13 18.6569 14.3431 20 16 20H24C25.6569 20 27 21.3431 27 23V25C27 26.6569 25.6569 28 24 28H16C14.3431 28 13 26.6569 13 25" 
-            stroke="#0F172A" 
-            strokeWidth="3.5" 
-            strokeLinecap="round"
+    <div className="flex items-center gap-6">
+      <div className="relative h-12 w-12 border border-white/10 bg-navy-900 flex items-center justify-center rounded-sm">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-8 h-8">
+          <path
+            d="M27 15C27 13.3431 25.6569 12 24 12H16C14.3431 12 13 13.3431 13 15V17C13 18.6569 14.3431 20 16 20H24C25.6569 20 27 21.3431 27 23V25C27 26.6569 25.6569 28 24 28H16C14.3431 28 13 26.6569 13 25"
+            stroke="white"
+            strokeWidth="3"
+            strokeLinecap="square"
           />
-          <rect x="24.5" y="25.5" width="4" height="4" fill="#0066FF" rx="1" />
+          <rect x="25" y="26" width="4" height="4" fill="#0066FF" />
         </svg>
       </div>
-      <span className="text-4xl font-extrabold tracking-tight text-slate-900">
-        Strapco<span className="text-brand">.</span>
+      <span className="text-4xl font-black tracking-[-0.05em] text-white uppercase">
+        STRAPCO<span className="text-brand">.</span>
       </span>
     </div>
-    <div className="mt-4 flex items-center gap-3">
-      <div className="h-px w-5 bg-brand/30"></div>
-      <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase font-mono">
-        Business Transformation Consulting
+    <div className="mt-4 flex items-center gap-4">
+      <div className="h-px w-6 bg-brand"></div>
+      <span className="text-[9px] font-black tracking-[0.5em] text-slate-500 uppercase">
+        Strategic Delivery & Assurance
       </span>
     </div>
   </div>
@@ -55,77 +55,146 @@ export const STRAPCO_FULL_LOGO = (
 
 export const SERVICES: ServiceDetail[] = [
   {
-    id: 'transformation-discovery',
-    title: 'Transformation Discovery and Mobilisation',
-    category: 'Lot 3: Cloud Support',
-    description: 'Senior-led transformation discovery and mobilisation to help organisations define scope, priorities and delivery approach before committing to change.',
+    id: "discovery-investigative-design",
+    title: "Discovery & Investigative Design",
+    category: "Discovery",
+    description:
+      "Discovery and design of complex, data-driven capabilities in regulated environments. We define information flows, evidential logic, governance controls and operational constraints before delivery begins.",
     features: [
-      'Senior-led discovery for complex transformation initiatives',
-      'Stakeholder alignment and decision-making facilitation',
-      'Requirements definition and backlog shaping',
-      'Delivery roadmap and mobilisation planning',
-      'Governance and operating model definition',
-      'Options analysis to support informed delivery decisions',
-      'Structured workshops to explore problems and delivery options',
-      'Independent senior perspective on complex change initiatives'
+      "GDS Discovery & Alpha delivery",
+      "Investigative data flow design",
+      "Requirements & evidential modelling",
+      "Legal, policy & operational alignment"
     ],
-    benefits: [
-      'Clarifies objectives before committing to delivery',
-      'Reduces delivery risk and wasted investment',
-      'Enables faster, more confident decision-making',
-      'Aligns stakeholders around shared priorities',
-      'Improves readiness for Alpha and delivery phases',
-      'Establishes clear governance and accountability',
-      'Improves confidence in delivery approach and investment',
-      'Creates a shared understanding of scope and next steps'
+    benefits: ["Reduced delivery risk", "Clear decision points", "Audit-ready logic"]
+  },
+  {
+    id: "assured-implementation",
+    title: "Assured Implementation",
+    category: "Engineering",
+    description:
+      "Senior-led delivery of complex data, cloud and integration programmes across government and regulated sectors—supporting mobilisation through to live service with governance built in.",
+    features: [
+      "Cloud & data platform delivery (AWS / secure estates)",
+      "Integration of legacy and mission systems",
+      "Agile delivery within regulatory constraints",
+      "Delivery governance & assurance"
+    ],
+    benefits: ["Predictable delivery", "Operational resilience", "Stakeholder confidence"]
+  },
+  {
+    id: "enterprise-advisory",
+    title: "Enterprise Advisory",
+    category: "Strategy",
+    description:
+      "Decision support for senior stakeholders navigating complex regulatory, technical and operational change. Clear options, delivery strategies and risk-based recommendations grounded in real programme delivery.",
+    features: [
+      "Delivery & operating model design",
+      "Framework-aligned engagement (e.g., G-Cloud)",
+      "Programme recovery & assurance",
+      "Senior interim and advisory support"
+    ],
+    benefits: ["Executive alignment", "Reduced uncertainty", "Improved outcomes"]
+  }
+];
+
+export const CASE_STUDIES: CaseStudy[] = [
+  {
+    id: "investigative-capability-modernisation",
+    sector: "National security / law enforcement",
+    classification: "Anonymised programme case study",
+    summary:
+      "Led analysis and delivery design for a cross-organisation investigative capability enabling secure access to high-volume communications data, translating legal/policy constraints into operational workflows and verifiable requirements.",
+    outcomes: [
+      "Defined end-to-end investigative workflows and evidential logic to support defensible operational use",
+      "Improved delivery predictability through structured epics, user stories, acceptance criteria and operational rules",
+      "Reduced integration risk by clarifying system boundaries, interfaces and data handling constraints",
+      "Accelerated stakeholder decision-making via options analysis and clear trade-offs"
+    ],
+    technologies: [
+      "Secure data platforms",
+      "API/integration patterns",
+      "Event-driven architectures",
+      "Data exploitation and analytics",
+      "AI/ML-assisted triage (use-case evaluation)"
+    ],
+    delivery: [
+      "Discovery-to-delivery traceability (policy → requirements → acceptance criteria)",
+      "Governance and delivery assurance for regulated programmes",
+      "Stakeholder facilitation across technical, operational and legal audiences"
     ]
   },
   {
-    id: 'programme-assurance',
-    title: 'Programme Delivery Assurance and Intervention',
-    category: 'Lot 3: Cloud Support',
-    description: 'Independent, senior-led assurance and intervention for cloud-enabled programmes. Assessing delivery health, governance, risks and controls.',
-    features: [
-      'Independent assessment of programme and delivery health',
-      'Review of governance, controls and decision-making structures',
-      'Identification of delivery risks and issues',
-      'Senior challenge and assurance to delivery leadership',
-      'Targeted intervention to stabilise at-risk programmes',
-      'Clear recommendations and recovery actions'
+    id: "aws-event-driven-file-access",
+    sector: "Public health / operational services",
+    classification: "Anonymised MVP delivery case study",
+    summary:
+      "Designed and delivered an event-driven ‘simple file access’ capability to enable controlled ingestion, processing and distribution of operational files, including notification and alerting for service reliability.",
+    outcomes: [
+      "Delivered an MVP architecture with clear operational runbooks and alerting to support supportability",
+      "Implemented duplicate handling and deterministic processing rules to improve data quality",
+      "Enabled faster turnaround for operational file handling with automated notifications",
+      "Improved resilience by decoupling ingestion, processing and outbound distribution"
     ],
-    benefits: [
-      'Improves confidence in programme delivery',
-      'Identifies risks before they impact outcomes',
-      'Supports informed decision-making by senior stakeholders',
-      'Helps stabilise programmes under pressure',
-      'Reduces likelihood of delivery failure',
-      'Provides independent, objective assurance'
+    technologies: [
+      "AWS S3",
+      "AWS Lambda",
+      "Amazon EventBridge",
+      "Gov.uk Notify",
+      "Structured logging and operational alerting"
+    ],
+    delivery: [
+      "Architecture definition + epics/stories + acceptance criteria",
+      "Operational readiness (alerts, failure modes, runbooks)",
+      "Controls for duplication, retries and idempotency"
     ]
   },
   {
-    id: 'backlog-definition',
-    title: 'Product and Backlog Definition for Cloud Services',
-    category: 'Lot 3: Cloud Support',
-    description: 'Helping organisations shape cloud-enabled services for delivery by translating user, operational and policy needs into prioritised backlogs.',
-    features: [
-      'Senior-led product discovery and backlog definition',
-      'Prioritisation of user, operational and policy requirements',
-      'Backlog refinement for cloud and SaaS services',
-      'Roadmap definition aligned to delivery outcomes',
-      'Support to agile delivery teams and product owners',
-      'Independent product perspective in complex environments',
-      'Translation of complex requirements into delivery-ready user stories',
-      'Support for backlog governance and prioritisation decisions'
+    id: "legacy-modernisation-data-integration",
+    sector: "Regulated enterprise / legacy estates",
+    classification: "Anonymised transformation case study",
+    summary:
+      "Supported a modernisation programme decoupling legacy systems and establishing a scalable integration approach to improve reliability, change velocity and governance for critical services.",
+    outcomes: [
+      "Reduced delivery friction by clarifying target-state interfaces and data contracts",
+      "Improved resilience through clearer ownership boundaries and integration patterns",
+      "Strengthened governance by standardising requirements, non-functional constraints and quality gates",
+      "Improved stakeholder confidence via transparent RAID management and delivery reporting"
     ],
-    benefits: [
-      'Improves clarity and quality of delivery backlogs',
-      'Reduces delivery friction and rework',
-      'Enables teams to focus on highest-value outcomes',
-      'Improves alignment between stakeholders and delivery teams',
-      'Supports effective iteration of live services',
-      'Strengthens product decision-making and prioritisation',
-      'Reduces ambiguity in requirements and acceptance criteria',
-      'Improves confidence in product scope and priorities'
+    technologies: [
+      "Integration and API design",
+      "Cloud migration planning",
+      "Data pipelines and batch/stream patterns",
+      "Security and compliance controls"
+    ],
+    delivery: [
+      "Programme planning and mobilisation support",
+      "Non-functional requirements and service constraints",
+      "Cross-team coordination and delivery governance"
+    ]
+  },
+  {
+    id: "ai-enabled-knowledge-workflows",
+    sector: "Regulated operations",
+    classification: "Anonymised applied AI case study",
+    summary:
+      "Designed and evaluated AI-assisted knowledge workflows to improve consistency and auditability of outputs, including structured prompting, quality checks, and alignment to acceptance criteria prior to rollout.",
+    outcomes: [
+      "Improved consistency by defining structural inputs/constraints and standard response formats",
+      "Reduced risk through evaluation against acceptance criteria and stakeholder expectations",
+      "Identified suitable use-cases and guardrails for responsible adoption",
+      "Enabled faster knowledge retrieval and drafting for operational teams"
+    ],
+    technologies: [
+      "RAG concepts (retrieval augmented generation)",
+      "Embeddings and semantic search patterns",
+      "Prompt constraints and response validation",
+      "Human-in-the-loop review workflows"
+    ],
+    delivery: [
+      "Use-case shaping, risk controls and evaluation approach",
+      "Acceptance criteria and rollout readiness checks",
+      "Stakeholder alignment for safe operational adoption"
     ]
   }
 ];
