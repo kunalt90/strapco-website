@@ -109,6 +109,101 @@ const App: React.FC = () => {
     </nav>
   );
 
+  const HomeCaseStudies = () => {
+    const featured = CASE_STUDIES.slice(0, 3);
+
+    return (
+      <section className="py-32 bg-navy-950 border-t border-white/5">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
+          <div className="flex flex-col lg:flex-row justify-between items-baseline mb-16 gap-10">
+            <div>
+              <div className="flex items-center gap-4 text-brand mb-6">
+                <span className="text-[10px] font-black uppercase tracking-[0.6em] border-b border-brand pb-1">
+                  Delivery Evidence
+                </span>
+                <div className="h-px flex-grow bg-white/5 max-w-[100px]"></div>
+              </div>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-[-0.03em]">
+                Case studies (anonymised).
+              </h2>
+            </div>
+
+            <div className="text-slate-500 text-sm font-medium max-w-xl">
+              Clients are intentionally anonymised. These examples focus on delivery approach, technology and
+              measurable outcomes in regulated environments.
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-6">
+            {featured.map((cs) => (
+              <div key={cs.id} className="border border-white/10 bg-navy-950/40 p-10 flex flex-col">
+                <div className="flex items-start justify-between gap-6">
+                  <div className="text-brand text-[10px] font-black uppercase tracking-[0.5em]">
+                    {cs.sector}
+                  </div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500">
+                    {cs.classification}
+                  </div>
+                </div>
+
+                <p className="mt-6 text-slate-400 text-sm font-medium leading-relaxed flex-grow">
+                  {cs.summary}
+                </p>
+
+                <div className="mt-8">
+                  <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/70 mb-4">
+                    Outcomes
+                  </div>
+                  <div className="space-y-2">
+                    {cs.outcomes.slice(0, 3).map((o, i) => (
+                      <div
+                        key={i}
+                        className="flex items-start gap-3 text-[12px] font-medium text-slate-400 leading-relaxed"
+                      >
+                        <div className="mt-2 w-1 h-1 bg-brand flex-shrink-0"></div>
+                        <span>{o}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-8">
+                  <button
+                    onClick={() => setCurrentPage("case-studies")}
+                    className="text-[10px] font-black uppercase tracking-[0.35em] text-white/60 hover:text-white transition-colors inline-flex items-center gap-3"
+                  >
+                    View full case studies <ChevronRight size={14} />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 flex flex-col sm:flex-row gap-6 sm:items-center sm:justify-between">
+            <p className="text-slate-500 text-sm font-medium max-w-2xl">
+              Want case studies tailored to your domain (health, law enforcement, national security, regulated
+              enterprise)? Strapco can share a short engagement outline and relevant delivery artefacts.
+            </p>
+            <div className="flex gap-4">
+              <button
+                onClick={() => setCurrentPage("case-studies")}
+                className="px-8 py-4 bg-brand text-white font-bold uppercase tracking-widest text-[10px] hover:bg-white hover:text-navy-950 transition-all inline-flex items-center gap-3"
+              >
+                Browse all <ExternalLink size={14} />
+              </button>
+              <button
+                onClick={() => setCurrentPage("contact")}
+                className="px-8 py-4 border border-white/10 text-[10px] font-black uppercase tracking-[0.35em] hover:bg-white hover:text-navy-950 transition-all"
+              >
+                Discuss
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  };
+
   const HomePage = () => (
     <div>
       <section className="relative min-h-screen flex flex-col justify-center pt-32 zest-grid">
@@ -254,6 +349,8 @@ const App: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <HomeCaseStudies />
     </div>
   );
 
@@ -305,7 +402,7 @@ const App: React.FC = () => {
             onClick={() => setCurrentPage("case-studies")}
             className="px-10 py-5 bg-brand text-white font-bold uppercase tracking-widest text-[10px] hover:bg-white hover:text-navy-950 transition-all inline-flex items-center gap-6"
           >
-            See how this looks in practice <ArrowRight size={16} />
+            See delivery examples <ArrowRight size={16} />
           </button>
         </div>
       </div>
@@ -581,9 +678,7 @@ const App: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="text-[10px] font-black text-brand uppercase tracking-[0.4em] mb-10">
-                Navigate
-              </h4>
+              <h4 className="text-[10px] font-black text-brand uppercase tracking-[0.4em] mb-10">Navigate</h4>
               <ul className="space-y-6 text-[10px] font-bold text-slate-400 uppercase tracking-[0.25em]">
                 {navItems.map((item) => (
                   <li key={item.id}>
@@ -599,9 +694,7 @@ const App: React.FC = () => {
             </div>
 
             <div>
-              <h4 className="text-[10px] font-black text-brand uppercase tracking-[0.4em] mb-10">
-                Connect
-              </h4>
+              <h4 className="text-[10px] font-black text-brand uppercase tracking-[0.4em] mb-10">Connect</h4>
               <ul className="space-y-6 text-[10px] font-bold text-slate-400 uppercase tracking-[0.25em]">
                 <li>
                   <a href="#" className="hover:text-white transition-colors">
