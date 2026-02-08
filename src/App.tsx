@@ -198,3 +198,434 @@ const App: React.FC = () => {
                 className="group p-12 lg:p-14 hover:bg-navy-800 transition-colors duration-500 flex flex-col"
               >
                 <span className="text-brand text-[10px] font-black tracking-[0.5em] uppercase mb-14 opacity-40 group-hover:opacity-100 transition-opacity">
+                  0{i + 1}
+                </span>
+
+                <div className="mb-10">
+                  {i === 0 ? (
+                    <Command className="text-white" size={28} />
+                  ) : i === 1 ? (
+                    <Layers className="text-white" size={28} />
+                  ) : (
+                    <ShieldCheck className="text-white" size={28} />
+                  )}
+                </div>
+
+                <h3 className="text-3xl lg:text-4xl font-black text-white mb-6 tracking-[-0.03em] group-hover:text-brand transition-colors">
+                  {s.title}
+                </h3>
+
+                <p className="text-slate-400 text-base lg:text-lg mb-10 font-medium leading-relaxed flex-grow">
+                  {s.description}
+                </p>
+
+                <div className="space-y-3 mb-12">
+                  {s.features.slice(0, 3).map((f, fi) => (
+                    <div
+                      key={fi}
+                      className="flex items-center gap-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest"
+                    >
+                      <div className="w-1 h-1 bg-brand"></div> {f}
+                    </div>
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => setCurrentPage("capabilities")}
+                  className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.3em] text-white/50 group-hover:text-white transition-all"
+                >
+                  Full Details <ChevronRight size={14} />
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-14 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
+            <p className="text-slate-500 text-sm font-medium max-w-2xl">
+              Work is delivered with traceability (policy → requirements → acceptance criteria), clear
+              governance and operational readiness—so delivery stands up to scrutiny.
+            </p>
+            <button
+              onClick={() => setCurrentPage("frameworks")}
+              className="px-8 py-4 border border-white/10 text-[10px] font-black uppercase tracking-[0.35em] hover:bg-white hover:text-navy-950 transition-all inline-flex items-center gap-3"
+            >
+              Framework engagement <ExternalLink size={14} />
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+
+  const CapabilitiesPage = () => (
+    <div className="pt-44 pb-24 px-6 lg:px-16 min-h-[80vh] zest-grid">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="flex items-center gap-4 text-brand mb-8">
+          <span className="text-[10px] font-black uppercase tracking-[0.6em]">Capabilities</span>
+        </div>
+
+        <h1 className="text-5xl lg:text-7xl font-black text-white mb-10 tracking-[-0.03em]">
+          Delivery that holds up under scrutiny.
+        </h1>
+
+        <p className="text-slate-400 text-lg max-w-3xl font-medium leading-relaxed">
+          Strapco supports complex programmes where policy, legal constraints, security requirements and
+          operational realities must be reflected in the delivery artefacts—not added later.
+          <br />
+          <br />
+          Typical outputs include: structured epics and user stories, acceptance criteria, operational rules,
+          service constraints, governance controls, and implementation-ready delivery plans.
+        </p>
+
+        <div className="mt-14 grid lg:grid-cols-3 gap-6">
+          {SERVICES.map((s) => (
+            <div key={s.id} className="border border-white/10 bg-navy-950/40 p-10">
+              <div className="text-brand text-[10px] font-black uppercase tracking-[0.5em] mb-4">
+                {s.category}
+              </div>
+              <h3 className="text-2xl font-black text-white mb-4 tracking-[-0.02em]">{s.title}</h3>
+              <p className="text-slate-400 text-sm font-medium leading-relaxed mb-8">{s.description}</p>
+
+              <div className="space-y-3">
+                {s.features.map((f, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-3 text-[10px] font-bold text-slate-500 uppercase tracking-widest"
+                  >
+                    <div className="w-1 h-1 bg-brand"></div> {f}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16">
+          <button
+            onClick={() => setCurrentPage("case-studies")}
+            className="px-10 py-5 bg-brand text-white font-bold uppercase tracking-widest text-[10px] hover:bg-white hover:text-navy-950 transition-all inline-flex items-center gap-6"
+          >
+            See how this looks in practice <ArrowRight size={16} />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  const CaseStudiesPage = () => (
+    <div className="pt-44 pb-24 px-6 lg:px-16 min-h-[80vh] zest-grid">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="flex items-center gap-4 text-brand mb-8">
+          <span className="text-[10px] font-black uppercase tracking-[0.6em]">Case Studies</span>
+        </div>
+
+        <h1 className="text-5xl lg:text-7xl font-black text-white mb-10 tracking-[-0.03em]">
+          Anonymised delivery outcomes.
+        </h1>
+
+        <p className="text-slate-400 text-lg max-w-3xl font-medium leading-relaxed">
+          Examples of work delivered across highly regulated environments. Clients are intentionally
+          anonymised; the focus is on delivery approach, technology and outcomes.
+        </p>
+
+        <div className="mt-14 grid lg:grid-cols-2 gap-6">
+          {CASE_STUDIES.map((cs) => (
+            <div key={cs.id} className="border border-white/10 bg-navy-950/40 p-10">
+              <div className="flex flex-wrap gap-3 items-center justify-between">
+                <div className="text-brand text-[10px] font-black uppercase tracking-[0.5em]">{cs.sector}</div>
+                <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500">
+                  {cs.classification}
+                </div>
+              </div>
+
+              <p className="mt-6 text-slate-400 text-sm font-medium leading-relaxed">{cs.summary}</p>
+
+              <div className="mt-8">
+                <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/70 mb-4">
+                  Outcomes
+                </div>
+                <div className="space-y-3">
+                  {cs.outcomes.map((o, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-3 text-[12px] font-medium text-slate-400 leading-relaxed"
+                    >
+                      <div className="mt-2 w-1 h-1 bg-brand flex-shrink-0"></div>
+                      <span>{o}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-8 grid sm:grid-cols-2 gap-6">
+                <div>
+                  <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/70 mb-4">
+                    Technology
+                  </div>
+                  <div className="space-y-2">
+                    {cs.technologies.map((t, i) => (
+                      <div
+                        key={i}
+                        className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500"
+                      >
+                        {t}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/70 mb-4">
+                    Delivery
+                  </div>
+                  <div className="space-y-2">
+                    {cs.delivery.map((d, i) => (
+                      <div
+                        key={i}
+                        className="text-[10px] font-bold uppercase tracking-[0.25em] text-slate-500"
+                      >
+                        {d}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-10">
+                <button
+                  onClick={() => setCurrentPage("contact")}
+                  className="px-8 py-4 border border-white/10 text-[10px] font-black uppercase tracking-[0.35em] hover:bg-white hover:text-navy-950 transition-all"
+                >
+                  Discuss a similar engagement
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+
+  const FrameworksPage = () => (
+    <div className="pt-44 pb-24 px-6 lg:px-16 min-h-[80vh] zest-grid">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="flex items-center gap-4 text-brand mb-8">
+          <span className="text-[10px] font-black uppercase tracking-[0.6em]">Frameworks</span>
+        </div>
+
+        <h1 className="text-5xl lg:text-7xl font-black text-white mb-10 tracking-[-0.03em]">
+          Framework-ready engagement.
+        </h1>
+
+        <p className="text-slate-400 text-lg max-w-3xl font-medium leading-relaxed">
+          Strapco is structured for public sector procurement and delivery expectations. Engagements are
+          scoped with clear outcomes, deliverables, governance and quality gates—designed to support
+          transparent decision-making and auditability.
+        </p>
+
+        <div className="mt-14 grid lg:grid-cols-3 gap-6">
+          {[
+            {
+              title: "Clear deliverables",
+              body: "Defined outputs such as epics/stories, acceptance criteria, operational rules, architecture decisions and delivery plans."
+            },
+            {
+              title: "Governance & assurance",
+              body: "Risk-managed delivery with RAID, decision logs, quality gates and stakeholder reporting aligned to programme needs."
+            },
+            {
+              title: "Operational readiness",
+              body: "Alerting, failure modes, runbooks and support models considered from day one—not after go-live."
+            }
+          ].map((x) => (
+            <div key={x.title} className="border border-white/10 bg-navy-950/40 p-10">
+              <h3 className="text-2xl font-black text-white mb-4 tracking-[-0.02em]">{x.title}</h3>
+              <p className="text-slate-400 text-sm font-medium leading-relaxed">{x.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16">
+          <button
+            onClick={() => setCurrentPage("contact")}
+            className="px-10 py-5 bg-brand text-white font-bold uppercase tracking-widest text-[10px] hover:bg-white hover:text-navy-950 transition-all inline-flex items-center gap-6"
+          >
+            Request an engagement outline <ArrowRight size={16} />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  const StrategyPage = () => (
+    <div className="pt-44 pb-24 px-6 lg:px-16 min-h-[80vh] zest-grid">
+      <div className="max-w-[1440px] mx-auto">
+        <div className="flex items-center gap-4 text-brand mb-8">
+          <span className="text-[10px] font-black uppercase tracking-[0.6em]">Strategy</span>
+        </div>
+
+        <h1 className="text-5xl lg:text-7xl font-black text-white mb-10 tracking-[-0.03em]">
+          Options, trade-offs and delivery reality.
+        </h1>
+
+        <p className="text-slate-400 text-lg max-w-3xl font-medium leading-relaxed">
+          Strategy is only useful when it is deliverable. Strapco supports senior stakeholders with options
+          analysis, delivery strategies, dependency mapping and risk controls—grounded in modern delivery
+          practice and regulated constraints.
+        </p>
+
+        <div className="mt-14 grid lg:grid-cols-2 gap-6">
+          {[
+            {
+              title: "Decision support",
+              body: "Structured options with trade-offs, assumptions, dependencies and risk impacts—so decisions are explicit."
+            },
+            {
+              title: "Delivery shaping",
+              body: "Mobilisation planning, governance, delivery controls and acceptance criteria to turn strategy into executable plans."
+            }
+          ].map((x) => (
+            <div key={x.title} className="border border-white/10 bg-navy-950/40 p-10">
+              <h3 className="text-2xl font-black text-white mb-4 tracking-[-0.02em]">{x.title}</h3>
+              <p className="text-slate-400 text-sm font-medium leading-relaxed">{x.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16">
+          <button
+            onClick={() => setCurrentPage("case-studies")}
+            className="px-10 py-5 border border-white/10 text-[10px] font-black uppercase tracking-[0.35em] hover:bg-white hover:text-navy-950 transition-all inline-flex items-center gap-3"
+          >
+            See delivery examples <ExternalLink size={14} />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  const ContactPage = () => (
+    <div className="pt-44 pb-24 px-6 lg:px-16 min-h-[80vh] zest-grid">
+      <div className="max-w-[1440px] mx-auto max-w-4xl">
+        <div className="flex items-center gap-4 text-brand mb-8">
+          <span className="text-[10px] font-black uppercase tracking-[0.6em]">Inquiry</span>
+        </div>
+
+        <h1 className="text-5xl lg:text-7xl font-black text-white mb-10 tracking-[-0.03em]">
+          Start with scope, outcomes and constraints.
+        </h1>
+
+        <p className="text-slate-400 text-lg font-medium leading-relaxed">
+          Share the problem space, constraints (security, compliance, policy), stakeholders involved, and any
+          delivery timelines. Strapco can respond with a short engagement outline and proposed deliverables.
+        </p>
+
+        <div className="mt-12 border border-white/10 bg-navy-950/40 p-10">
+          <div className="text-[10px] font-black uppercase tracking-[0.4em] text-white/70 mb-4">
+            Suggested email structure
+          </div>
+          <div className="space-y-3 text-slate-400 text-sm font-medium leading-relaxed">
+            <p>• Context and objective</p>
+            <p>• Key constraints (security, legal, operational)</p>
+            <p>• Known stakeholders and decision points</p>
+            <p>• Timeline and delivery expectations</p>
+            <p>• Desired outputs (e.g., discovery pack, delivery plan, assurance)</p>
+          </div>
+        </div>
+
+        <div className="mt-16">
+          <button
+            onClick={() => setCurrentPage("home")}
+            className="px-10 py-5 border border-white/10 text-[10px] font-black uppercase tracking-[0.4em] hover:bg-brand hover:border-brand transition-all active:scale-95"
+          >
+            Back to Overview
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+
+  const renderPage = () => {
+    switch (currentPage) {
+      case "home":
+        return <HomePage />;
+      case "capabilities":
+        return <CapabilitiesPage />;
+      case "case-studies":
+        return <CaseStudiesPage />;
+      case "frameworks":
+        return <FrameworksPage />;
+      case "strategy":
+        return <StrategyPage />;
+      case "contact":
+        return <ContactPage />;
+      default:
+        return <HomePage />;
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-navy-950 font-sans">
+      <Navigation />
+      <main>{renderPage()}</main>
+
+      <footer className="bg-navy-950 py-28 border-t border-white/5">
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
+          <div className="grid lg:grid-cols-4 gap-16">
+            <div className="lg:col-span-2">
+              {STRAPCO_FULL_LOGO}
+              <p className="mt-10 max-w-md text-sm font-medium text-slate-500 leading-relaxed">
+                Senior delivery and technology consulting for the UK public sector and regulated environments.
+                From early discovery through to live service, Strapco supports organisations delivering
+                high-risk, high-impact systems with confidence.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-[10px] font-black text-brand uppercase tracking-[0.4em] mb-10">
+                Navigate
+              </h4>
+              <ul className="space-y-6 text-[10px] font-bold text-slate-400 uppercase tracking-[0.25em]">
+                {navItems.map((item) => (
+                  <li key={item.id}>
+                    <button
+                      onClick={() => setCurrentPage(item.id)}
+                      className="hover:text-white transition-colors"
+                    >
+                      {item.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-[10px] font-black text-brand uppercase tracking-[0.4em] mb-10">
+                Connect
+              </h4>
+              <ul className="space-y-6 text-[10px] font-bold text-slate-400 uppercase tracking-[0.25em]">
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <button onClick={() => setCurrentPage("contact")} className="hover:text-white transition-colors">
+                    Contact
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="mt-28 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p className="text-[9px] font-bold text-slate-700 uppercase tracking-[0.4em]">
+              © 2026 Strapco Strategic Delivery. Delivery assurance for regulated environments.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default App;
